@@ -2,6 +2,15 @@
 class KittensController < ApplicationController
     def index
       @kittens = Kitten.all
+
+      respond_to do |format|
+        format.html # Render the index.html.erb template by default for HTML requests
+  
+        format.json do
+          # Render the @kittens array as JSON for JSON requests
+          render json: @kittens
+        end
+      end
     end
   
     def show
