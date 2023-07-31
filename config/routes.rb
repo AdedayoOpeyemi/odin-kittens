@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Define the routes for KittensController
+  resources :kittens
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Set the default route to KittensController#index
+  root to: 'kittens#index'
 end
